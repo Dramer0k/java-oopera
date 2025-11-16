@@ -1,7 +1,10 @@
-import java.util.ArrayList;
+package Show;
+
+import Person.Director;
+import Person.Person;
 
 public class MusicalShow extends Show {
-    Person musicAuthor;
+    private final Person musicAuthor;
     String librettoText;
 
 
@@ -16,7 +19,11 @@ public class MusicalShow extends Show {
     }
 
 
-    public void getLibrettoText() {
+    public void printLibrettoText() {
         System.out.println(librettoText);
+    }
+
+    public Person getMusicAuthor() {
+        return musicAuthor;
     }
 }

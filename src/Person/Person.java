@@ -1,14 +1,24 @@
+package Person;
+
 import java.util.Objects;
 
 public class Person {
-    String name;
-    String surname;
+    protected  String name;
+    protected  String surname;
     Gender gender;
 
     public Person(Gender gender, String surname, String name) {
         this.gender = gender;
         this.surname = surname;
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
     }
 
     @Override
@@ -21,5 +31,10 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(name, surname, gender);
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + surname;
     }
 }
