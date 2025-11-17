@@ -3,9 +3,9 @@ package Person;
 import java.util.Objects;
 
 public class Person {
-    protected  String name;
-    protected  String surname;
-    Gender gender;
+    protected String name;
+    protected String surname;
+    protected Gender gender;
 
     public Person(Gender gender, String surname, String name) {
         this.gender = gender;
@@ -19,6 +19,10 @@ public class Person {
 
     public String getSurname() {
         return surname;
+    }
+
+    public Gender getGender() {
+        return gender;
     }
 
     @Override
@@ -37,4 +41,6 @@ public class Person {
     public String toString() {
         return name + " " + surname;
     }
+
+
 }

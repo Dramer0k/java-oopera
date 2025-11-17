@@ -19,15 +19,14 @@ public class Actor extends Person {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Actor actor = (Actor) o;
-        return height == actor.height &&
-                Objects.equals(super.getName(), actor.getName()) &&
-                Objects.equals(super.getSurname(), actor.getSurname());
+        return height == actor.height;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(super.getName());
+        return Objects.hash(super.hashCode(), height);
     }
+
 
     @Override
     public String toString() {

@@ -5,7 +5,7 @@ import Person.Person;
 
 public class MusicalShow extends Show {
     private final Person musicAuthor;
-    String librettoText;
+    private String librettoText;
 
 
     public MusicalShow(String title, int duration, Director director, Person musicAuthor, String librettoText ) {

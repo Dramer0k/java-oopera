@@ -13,8 +13,6 @@ public class Theatre {
         Actor actor1 = new Actor(Gender.MALE, "Борисов", "Михаил", 180);
         Actor actor2 = new Actor(Gender.MALE, "Совельев", "Олег", 178);
         Actor actor3 = new Actor(Gender.FEMALE, "Миронова", "Александра", 175);
-        Actor actor4 = new Actor(Gender.MALE, "Совельев", "Леша", 174);
-        Actor actor5 = new Actor(Gender.MALE, "Совельев", "Петя", 178);
         Director director1 = new Director(Gender.MALE, "Попов", "Иван", 23);
         Director director2 = new Director(Gender.FEMALE, "Попова", "Дарья", 17);
         Person musicAuthor = new Person(Gender.MALE, "Шишкин", "Глеб");
@@ -33,21 +31,21 @@ public class Theatre {
         opera.addActor(actor1);
         opera.addActor(actor3);
 
-        System.out.println("Список актеров в шоу: " + show.title);
+        System.out.println("Список актеров в шоу: " + show.getTitle());
         show.getListOfActors();
-        System.out.println("Список актеров в балете: " + ballet.title);
+        System.out.println("Список актеров в балете: " + ballet.getTitle());
         ballet.getListOfActors();
-        System.out.println("Список актеров в опере: " + opera.title);
+        System.out.println("Список актеров в опере: " + opera.getTitle());
         opera.getListOfActors();
 
         ballet.replaceActor(actor1, "Совельев");
 
-        System.out.println("Обновленный список актеров в балете: " + ballet.title);
+        System.out.println("Обновленный список актеров в балете: " + ballet.getTitle());
         ballet.getListOfActors();
 
-        System.out.println("Текс либретто в балете: " + ballet.title);
+        System.out.println("Текс либретто в балете: " + ballet.getTitle());
         ballet.printLibrettoText();
-        System.out.println("Текс либретто в опере: " + opera.title);
+        System.out.println("Текс либретто в опере: " + opera.getTitle());
         opera.printLibrettoText();
 
         System.out.println("Поехали!");

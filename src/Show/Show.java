@@ -2,17 +2,18 @@ package Show;
 
 import Person.Actor;
 import Person.Director;
-import java.util.Scanner;
 
+import java.util.Iterator;
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class Show {
-    public String title;
-    int duration;
-    Director director;
-    ArrayList<Actor> listOfActors;
-    Scanner scanner = new Scanner(System.in);
+    protected String title;
+    protected int duration;
+    protected Director director;
+    protected ArrayList<Actor> listOfActors;
+    protected Scanner scanner = new Scanner(System.in);
 
     public Show(String title, int duration, Director director) {
         this.title = title;
@@ -21,7 +22,15 @@ public class Show {
         listOfActors = new ArrayList<>();
     }
 
-    public void getDirector() {
+    public String getTitle() {
+        return title;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void printDirector() {
         System.out.println(director);
     }
 
@@ -78,14 +87,14 @@ public class Show {
                 String input = scanner.nextLine();
                 switch (input) {
                     case "Да":
-                        ArrayList<Actor> updatedList = new ArrayList<>();
-                        for (Actor actor1 : listOfActors) {
-                            if (!Objects.equals(actor1.getSurname(), surname)) {
-                                updatedList.add(actor1);
+                        Iterator<Actor> actors = listOfActors.iterator();
+                        while(actors.hasNext()) {
+                            Actor nextActor = actors.next();
+                            if (Objects.equals(nextActor.getSurname(), surname)) {
+                                actors.remove();
                             }
                         }
-                        updatedList.add(actor);
-                        listOfActors = updatedList;
+                        listOfActors.add(actor);
                         break;
                     case "Нет":
                         System.out.println("Заменить актера не получилось");
